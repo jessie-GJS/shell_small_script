@@ -1,0 +1,20 @@
+#!/usr/bin/awk -f
+BEGIN{
+	d="4,90,6.9,8,10,1,60,7.8,9.3";
+	split(d,a,",");
+	#sort
+	for(i=0;i<9;i++){
+		k=i;
+		for(j=i+1;j<9;j++){
+			if(a[j]<a[k])
+				k=j;
+		}
+		temp=a[i];
+		a[i]=a[k];
+		a[k]=temp;
+	}
+i=1;	
+for(i in a)
+print a[i];
+}
+
