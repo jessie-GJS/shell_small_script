@@ -1,0 +1,5 @@
+#!/usr/bin/awk -f
+BEGIN{FS="\t";OFS="\t"}
+{if($1==NR-1)$5=(NR-1)*10;
+print > "stu"}
+
